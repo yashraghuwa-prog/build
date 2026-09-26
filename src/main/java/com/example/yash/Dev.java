@@ -1,13 +1,17 @@
 package com.example.yash;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Dev {
-      Laptop laptop;
+     @Autowired
+     @Qualifier("desktop")
+      private Computer comp;
       public void build(){
 
-         laptop.compile();
+         comp.compile();
 
           System.out.println("working on awesome Project");
       }
